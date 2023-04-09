@@ -1,8 +1,8 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000/chunks";
+import { baseUrl } from "../../Utils/constants";
 
-export const postChunk = (data) => {
-  const url = `${baseUrl}/upload`;
+export const postChunk = (data, headers) => {
+  const url = `${baseUrl}/api/files/upload`;
   console.log(data);
-  return axios.post(url, data);
+  return axios.post(url, data, { headers });
 };

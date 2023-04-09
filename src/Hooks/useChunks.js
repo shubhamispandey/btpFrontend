@@ -2,10 +2,17 @@ import { getChunks } from "../Services/Chunk/getChunks";
 import { getHash } from "../Services/Chunk/getHash";
 import { toast } from "react-toastify";
 import { postChunk } from "../Services/Chunk/postChunk";
+import { useSelector } from "react-redux";
 
 const useChunks = () => {
+  const token = useSelector((state) => state.auth.token);
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+
   const handleGetChunks = (data) => {
-    getChunks()
+    getChunks(headers)
       .then((response) => {
         toast.success("Chunk Loading Success");
         console.log(response.data);
@@ -17,7 +24,7 @@ const useChunks = () => {
   };
 
   const handleGetHash = (data) => {
-    return getHash(data)
+    return getHash(data, headers)
       .then((response) => {
         toast.success("Hash already Present");
         console.log(response.data);
@@ -43,7 +50,7 @@ const useChunks = () => {
   };
 
   const handlePostChunk = (data) => {
-    postChunk(data)
+    postChunk(data, headers)
       .then((response) => {
         toast.success("Chunk Upload Success");
         console.log(response.data);

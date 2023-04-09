@@ -1,7 +1,7 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000/chunks";
+import { baseUrl } from "../../Utils/constants";
 
-export const getChunks = () => {
-  const url = `${baseUrl}/`;
-  return axios.get(url);
+export const getChunks = (headers) => {
+  const url = `${baseUrl}/api/files`;
+  return axios.get(url, { headers });
 };

@@ -1,8 +1,7 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000/chunks";
+import { baseUrl } from "../../Utils/constants";
 
-export const getHash = (data) => {
-  const url = `${baseUrl}/hash`;
-  console.log(data);
-  return axios.post(url, data);
+export const getHash = (data, headers) => {
+  const url = `${baseUrl}/api/files/check-hash`;
+  return axios.post(url, data, { headers });
 };
