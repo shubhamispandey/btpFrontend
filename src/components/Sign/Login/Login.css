@@ -1,0 +1,47 @@
+.login {
+  padding: var(--padding-section-2);
+  max-width: 70rem;
+}
+.login__title {
+  font-size: 3.8rem;
+  color: var(--color-secondary);
+}
+.login__desc {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-grey-1);
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.form-group label {
+  font-size: 1.5rem;
+  color: var(--color-grey-1);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.form-group input {
+  font-size: 1.6rem;
+  padding: 1rem 1.4rem;
+}
+.login__form button {
+  font-size: 1.6rem;
+}
+.login__forward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 3rem auto 0;
+}
+.login__forward a {
+  margin-left: 0.5rem;
+  color: var(--color-primary);
+}

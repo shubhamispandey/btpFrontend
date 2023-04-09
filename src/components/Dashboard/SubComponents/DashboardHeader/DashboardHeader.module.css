@@ -1,0 +1,24 @@
+.Wrapper {
+  padding: 2rem 3rem;
+  border-bottom: 1px solid var(--border-lt);
+  display: flex;
+}
+.UserMenu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.UserMenu > *:not(:last-child) {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+.MenuItem {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.MenuItem svg {
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
+}

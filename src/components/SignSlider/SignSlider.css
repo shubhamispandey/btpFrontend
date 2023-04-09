@@ -1,0 +1,44 @@
+/* Slider */
+
+.login__slider {
+  margin-bottom: 3rem;
+}
+.login__slider__item {
+  background: var(--color-primary-bg);
+  padding: var(--padding-section-4);
+  border-radius: 2rem;
+}
+.login__slider__item p {
+  font-size: 1.5rem;
+  color: var(--color-black);
+}
+.login__slider__user {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.login__slider__user--img {
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.login__slider__user--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.login__slider__user--desc h4 {
+  font-size: 1.4rem;
+}
+.login__slider__user--desc p {
+  font-size: 1.3rem;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--color-white);
+}

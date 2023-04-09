@@ -1,0 +1,10 @@
+.Button {
+  display: flex !important;
+  align-items: center !important;
+  font-size: 1.4rem !important;
+  margin-left: 3rem !important;
+}
+.Button svg {
+  margin-right: 1rem !important;
+  font-size: 1.6rem !important;
+}
