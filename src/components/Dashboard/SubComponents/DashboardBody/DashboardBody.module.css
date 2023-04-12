@@ -1,3 +1,35 @@
 .Wrapper {
   padding: 2rem 3rem;
 }
+.DashboardBodyTop {
+  display: flex;
+}
+.RefreshButton {
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  border: 1.5px solid var(--color-light-black);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: all 0.3s;
+}
+.RefreshButton:hover {
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.RefreshButtonSvgRevolve {
+  animation: Rotate 1s ease-in-out infinite;
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

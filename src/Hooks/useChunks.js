@@ -1,4 +1,3 @@
-import { getChunks } from "../Services/Chunk/getChunks";
 import { getHash } from "../Services/Chunk/getHash";
 import { toast } from "react-toastify";
 import { postChunk } from "../Services/Chunk/postChunk";
@@ -9,18 +8,6 @@ const useChunks = () => {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
-  };
-
-  const handleGetChunks = (data) => {
-    getChunks(headers)
-      .then((response) => {
-        toast.success("Chunk Loading Success");
-        console.log(response.data);
-      })
-      .catch((err) => {
-        toast.error(err.message);
-        console.log(err);
-      });
   };
 
   const handleGetHash = (data) => {
@@ -65,7 +52,7 @@ const useChunks = () => {
       });
   };
 
-  return { handleGetChunks, handleGetHash, handlePostChunk };
+  return { handleGetHash, handlePostChunk };
 };
 
 export default useChunks;

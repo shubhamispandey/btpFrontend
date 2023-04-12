@@ -1,0 +1,57 @@
+.Wrapper {
+  width: 100%;
+  margin-top: 3rem;
+}
+.Table {
+  display: flex;
+  flex-direction: column;
+}
+.Row {
+  display: grid;
+  align-items: center;
+  height: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 0.5rem;
+  background-color: var(--color-primary-bg);
+  transition: all 0.3s ease;
+}
+.Row:not(:last-child) {
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.Row:not(:first-child):hover {
+  background-color: var(--color-secondary-bg);
+}
+.Row:first-child {
+  background-color: var(--color-primary);
+}
+.Row:first-child .Column {
+  color: var(--color-white);
+}
+.Column {
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1rem 2rem;
+}
+.Column svg {
+  font-size: 1.6rem;
+}
+.BtnSvg {
+  width: 3rem !important;
+  height: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--border-xlt) !important;
+  border-radius: 50% !important;
+}
+.BtnSvg:hover {
+  background-color: var(--border-lt) !important;
+}
+.Row:not(:first-child) .Column:nth-child(2) svg {
+  color: #ff1852;
+}
+.Row:not(:first-child) .Column:nth-child(3) svg {
+  color: #00a336;
+}

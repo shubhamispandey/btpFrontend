@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Button } from "@mui/material";
 import { FileUploadOutlined } from "@mui/icons-material";
-import {
-  generateChunks,
-  generateChunksData,
-  readFile,
-} from "../../Utils/helper";
+import { generateChunks, generateChunksData } from "../../Utils/helper";
 import useChunks from "../../Hooks/useChunks";
 import styles from "./Upload.module.css";
 import { useSelector } from "react-redux";
@@ -16,24 +12,18 @@ const Upload = () => {
   const user = useSelector((state) => state.user.user);
 
   // !UPLOAD THE CHUNKS TO SERVER
-  const uploadChunks = (chunks) => {
+  const uploadChunks = (chunks, fileName) => {
     const uniqueFileId = uuidv4();
     chunks.forEach((chunk, id) => {
       const chunkData = {
-        email: user.email,
         hash: chunk.hash,
-        order: chunk.order,
-        users: [user._id],
         encrypted: chunk.encrypted,
-        configurations: new Map([
-          [
-            uniqueFileId,
-            {
-              email: user.email,
-              order: chunk.order,
-            },
-          ],
-        ]),
+        configurations: {
+          uniqueFileId,
+          fileName,
+          email: user.email,
+          order: chunk.order,
+        },
       };
       console.log(chunkData);
       handleGetHash(chunkData);
@@ -49,6 +39,7 @@ const Upload = () => {
       alert("Please select a file.");
       return;
     }
+    const fileName = file.name;
 
     // 2.Convert the file into chunks of size 1mb
     const chunks = await generateChunks(file);
@@ -58,7 +49,7 @@ const Upload = () => {
     const contents = await generateChunksData(chunks);
 
     // 4. Send the chunks to the server
-    uploadChunks(contents);
+    uploadChunks(contents, fileName);
   };
 
   return (
